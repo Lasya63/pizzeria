@@ -1,0 +1,50 @@
+/* ── Semicircle Selector ── */
+
+/* Root: only the top half of the large circle is visible */
+.sc-root {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  aspect-ratio: 2/1; /* height is exactly half width */
+  overflow: hidden;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+/* ── Layer 1: Pizza image ── */
+.sc-pizza-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 84.186%; /* Pizza effectively acts as the innermost loop (362 radius) */
+  aspect-ratio: 1/1; /* height equals width perfectly */
+  transform: translate(-50%, 50%); /* perfectly centers it vertically on the bottom edge! */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sc-pizza-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform, opacity;
+  border-radius: 50%; /* Perfect circle, so container overlap crops it to a semicircle */
+}
+
+/* ── Layer 2: SVG rings + labels (rendered ON TOP of pizza) ── */
+.sc-svg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.sc-svg-wrap svg {
+  pointer-events: all; /* labels need click events */
+}
+
+
