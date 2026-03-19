@@ -10,6 +10,81 @@
   overflow: hidden;
 }
 
+/* ── Translucent pizza background decorations (sticker-like) ── */
+.bg-pizza-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Top-right: A pizza slice sticker */
+.bg-pizza-decor::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 2%;
+  right: -30px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 10 L105 100 Q60 115 15 100 Z' fill='rgba(255,200,80,0.06)' stroke='rgba(255,200,80,0.12)' stroke-width='1.2' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='50' r='5' fill='rgba(200,60,30,0.08)'/%3E%3Ccircle cx='70' cy='60' r='4' fill='rgba(200,60,30,0.07)'/%3E%3Ccircle cx='55' cy='72' r='5.5' fill='rgba(200,60,30,0.08)'/%3E%3Ccircle cx='42' cy='62' r='3.5' fill='rgba(200,60,30,0.06)'/%3E%3Ccircle cx='65' cy='80' r='4' fill='rgba(200,60,30,0.07)'/%3E%3Ccircle cx='75' cy='75' r='3' fill='rgba(80,160,60,0.06)'/%3E%3Ccircle cx='48' cy='85' r='2.5' fill='rgba(80,160,60,0.06)'/%3E%3Cpath d='M60 10 L105 100' stroke='rgba(255,220,120,0.05)' stroke-width='0.5'/%3E%3Cpath d='M60 10 L15 100' stroke='rgba(255,220,120,0.05)' stroke-width='0.5'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  opacity: 1;
+  transform: rotate(15deg);
+}
+
+/* Bottom-left: A whole pizza outline sticker */
+.bg-pizza-decor::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  bottom: 5%;
+  left: -60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='50' fill='rgba(255,200,80,0.04)' stroke='rgba(255,200,80,0.1)' stroke-width='1.5'/%3E%3Ccircle cx='60' cy='60' r='46' fill='none' stroke='rgba(255,180,60,0.06)' stroke-width='0.8'/%3E%3Cline x1='60' y1='10' x2='60' y2='110' stroke='rgba(255,220,120,0.05)' stroke-width='0.5'/%3E%3Cline x1='10' y1='60' x2='110' y2='60' stroke='rgba(255,220,120,0.05)' stroke-width='0.5'/%3E%3Cline x1='25' y1='25' x2='95' y2='95' stroke='rgba(255,220,120,0.04)' stroke-width='0.5'/%3E%3Cline x1='95' y1='25' x2='25' y2='95' stroke='rgba(255,220,120,0.04)' stroke-width='0.5'/%3E%3Ccircle cx='45' cy='45' r='5' fill='rgba(200,60,30,0.07)'/%3E%3Ccircle cx='72' cy='48' r='4.5' fill='rgba(200,60,30,0.06)'/%3E%3Ccircle cx='55' cy='68' r='5.5' fill='rgba(200,60,30,0.07)'/%3E%3Ccircle cx='40' cy='58' r='3.5' fill='rgba(200,60,30,0.05)'/%3E%3Ccircle cx='75' cy='72' r='4' fill='rgba(200,60,30,0.06)'/%3E%3Ccircle cx='65' cy='40' r='3' fill='rgba(80,160,60,0.05)'/%3E%3Ccircle cx='50' cy='78' r='2.5' fill='rgba(80,160,60,0.05)'/%3E%3Ccircle cx='80' cy='58' r='2' fill='rgba(80,160,60,0.04)'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+  opacity: 1;
+  transform: rotate(-10deg);
+}
+
+/* Inline SVG stickers */
+.bg-sticker {
+  position: absolute;
+  pointer-events: none;
+}
+
+.bg-sticker--tl {
+  width: 180px;
+  height: 180px;
+  top: 5%;
+  left: 3%;
+  transform: rotate(-25deg);
+}
+
+.bg-sticker--mr {
+  width: 100px;
+  height: 100px;
+  top: 40%;
+  right: 4%;
+  transform: rotate(20deg);
+}
+
+.bg-sticker--cl {
+  width: 160px;
+  height: 160px;
+  top: 25%;
+  left: 6%;
+  transform: rotate(10deg);
+}
+
+.bg-sticker--br {
+  width: 160px;
+  height: 160px;
+  bottom: 8%;
+  right: 3%;
+  transform: rotate(30deg);
+}
+
 /* ── Nav Arrows ── */
 .nav-arrow {
   position: fixed;
